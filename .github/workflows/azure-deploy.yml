@@ -12,7 +12,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  NODE_VERSION: 20.19.1
+  NODE_VERSION: 26
   BUILD_OUTPUT: dist/app/browser
 
 jobs:
