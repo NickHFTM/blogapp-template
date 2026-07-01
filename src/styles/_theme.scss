@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+
+$light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$violet-palette,
+      tertiary: mat.$blue-palette,
+    ),
+  )
+);
+
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$cyan-palette,
+      tertiary: mat.$orange-palette,
+    ),
+  )
+);
+
+@mixin apply-themes {
+  html {
+    @include mat.all-component-themes($light-theme);
+    color-scheme: light;
+  }
+
+  html.dark-theme {
+    @include mat.all-component-colors($dark-theme);
+    color-scheme: dark;
+  }
+}
