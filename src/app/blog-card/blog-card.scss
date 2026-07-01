@@ -1,0 +1,37 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+mat-card {
+  @include card-shadow;
+
+  overflow: hidden;
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  img {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  mat-card-title {
+    color: var(--mat-sys-primary);
+  }
+
+  mat-card-content {
+    padding-top: $spacing-md;
+  }
+
+  mat-card-actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-md $spacing-md;
+  }
+}

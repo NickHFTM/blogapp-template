@@ -1,0 +1,12 @@
+@use './variables' as *;
+
+@mixin card-shadow {
+  border-radius: $radius-md;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+@mixin responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-lg;
+}

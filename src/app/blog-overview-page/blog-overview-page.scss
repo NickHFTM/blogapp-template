@@ -1,4 +1,8 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
 .blog-list {
-  display: grid;
-  gap: 1rem;
+  @include responsive-grid;
+
+  padding: $spacing-lg;
 }
