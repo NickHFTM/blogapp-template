@@ -1,8 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-test('should display the welcome page', async ({ page }) => {
+test('should display the blog page', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page.locator('mat-toolbar')).toContainText('HFTM Web Applications');
-  await expect(page.locator('h1')).toContainText('Willkommen zum Angular-Projekttemplate');
+  await expect(page.locator('mat-toolbar')).toContainText('Blog');
+  await expect(page.locator('mat-toolbar')).toContainText('Übersicht');
+  await expect(page.locator('mat-toolbar')).toContainText('About');
+
+  await expect(page.locator('mat-card').first()).toBeVisible();
 });
