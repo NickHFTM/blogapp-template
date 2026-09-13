@@ -1,0 +1,22 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { BlogCreateComponent } from './blog-create';
+
+describe('BlogCreateComponent', () => {
+  let component: BlogCreateComponent;
+  let fixture: ComponentFixture<BlogCreateComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [BlogCreateComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(BlogCreateComponent);
+    component = fixture.componentInstance;
+    await fixture.whenStable();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

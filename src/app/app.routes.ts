@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { BlogOverviewPageComponent } from './blog-overview-page/blog-overview-page';
 import { blogResolver } from './shared/blog.resolver';
 import { entriesResolver } from './feature/blog/blog-overview-page/entries-resolver';
@@ -10,6 +11,10 @@ export const routes: Routes = [
     resolve: {
       blogs: entriesResolver,
     },
+  },
+  {
+    path: 'blog/create',
+    loadComponent: () => import('./blog-create/blog-create').then((m) => m.BlogCreateComponent),
   },
   {
     path: 'blog/:id',
