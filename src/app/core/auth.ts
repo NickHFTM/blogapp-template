@@ -10,9 +10,4 @@ export class AuthService {
     localStorage.setItem('isLoggedIn', 'true');
     this.isLoggedIn.set(true);
   }
-
-  logout(): void {
-    localStorage.removeItem('isLoggedIn');
-    this.isLoggedIn.set(false);
-  }
 }
