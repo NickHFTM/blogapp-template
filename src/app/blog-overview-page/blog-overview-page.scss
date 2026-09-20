@@ -6,3 +6,28 @@
 
   padding: $spacing-lg;
 }
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  app-blog-card {
+    // Mobile: 1 Spalte
+    flex: 0 0 100%;
+    box-sizing: border-box;
+
+    // Tablet: 2 Spalten
+    @media (min-width: 768px) {
+      flex-basis: calc(50% - 0.5rem);
+    }
+
+    // Desktop: 3 Spalten
+    @media (min-width: 1024px) {
+      flex-basis: calc((100% - 2rem) / 3);
+    }
+  }
+}
+
+.error {
+  color: var(--mat-sys-error);
+}

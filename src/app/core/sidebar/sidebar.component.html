@@ -1,0 +1,73 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport role="dialog" mode="over" [opened]="false">
+    <mat-toolbar>Blog</mat-toolbar>
+
+    <mat-nav-list class="mobile-nav">
+      <a
+        mat-list-item
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="drawer.close()"
+      >
+        Übersicht
+      </a>
+
+      <a
+        mat-list-item
+        routerLink="/blog/create"
+        routerLinkActive="active-link"
+        (click)="drawer.close()"
+      >
+        Blog erstellen
+      </a>
+
+      <a mat-list-item routerLink="/about" routerLinkActive="active-link" (click)="drawer.close()">
+        About
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      @if (layout.isMobile()) {
+        <button type="button" aria-label="Menü öffnen" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      }
+
+      <span>Blog</span>
+
+      <span class="spacer"></span>
+
+      @if (!layout.isMobile()) {
+        <nav class="desktop-nav">
+          <a
+            mat-button
+            routerLink="/"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Übersicht
+          </a>
+
+          <a mat-button routerLink="/blog/create" routerLinkActive="active-link">
+            Blog erstellen
+          </a>
+
+          <a mat-button routerLink="/about" routerLinkActive="active-link"> About </a>
+        </nav>
+      }
+
+      <button mat-icon-button aria-label="Dark Mode umschalten" (click)="toggleDarkMode()">
+        <mat-icon>
+          {{ isDarkMode ? 'light_mode' : 'dark_mode' }}
+        </mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <main class="content">
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
