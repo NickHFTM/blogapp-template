@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { BlogOverviewPageComponent } from './blog-overview-page/blog-overview-page';
 import { blogResolver } from './shared/blog.resolver';
 import { entriesResolver } from './feature/blog/blog-overview-page/entries-resolver';
+import { authGuard } from './core/auth-guard';
 
 export const routes: Routes = [
   {
@@ -13,7 +14,12 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'login',
+    loadComponent: () => import('./login/login').then((m) => m.Login),
+  },
+  {
     path: 'blog/create',
+    canActivate: [authGuard],
     loadComponent: () => import('./blog-create/blog-create').then((m) => m.BlogCreateComponent),
   },
   {

@@ -74,6 +74,10 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "headers": {
+              "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';"
+            }},
           "configurations": {
             "production": {
               "buildTarget": "blogapp-template:build:production"
