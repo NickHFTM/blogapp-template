@@ -2,16 +2,12 @@ import { Routes } from '@angular/router';
 
 import { BlogOverviewPageComponent } from './blog-overview-page/blog-overview-page';
 import { blogResolver } from './shared/blog.resolver';
-import { entriesResolver } from './feature/blog/blog-overview-page/entries-resolver';
 import { authGuard } from './core/auth-guard';
 
 export const routes: Routes = [
   {
     path: '',
     component: BlogOverviewPageComponent,
-    resolve: {
-      blogs: entriesResolver,
-    },
   },
   {
     path: 'login',

@@ -76,8 +76,9 @@
           "builder": "@angular/build:dev-server",
           "options": {
             "headers": {
-              "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';"
-            }},
+              "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io;"
+            }
+          },
           "configurations": {
             "production": {
               "buildTarget": "blogapp-template:build:production"
@@ -90,8 +91,10 @@
         },
         "test": {
           "builder": "@angular/build:unit-test",
-           "options": {
-            "setupFiles": ["src/test-setup.ts"]
+          "options": {
+            "setupFiles": [
+              "src/test-setup.ts"
+            ]
           }
         },
         "lint": {
