@@ -28,7 +28,7 @@ const blogResponseSchema = z.object({
 })
 export class BlogService {
   #httpClient = inject(HttpClient);
-  #apiUrl = environment.apiUrl + '/entries';
+  #apiUrl = environment.apiUrl + 'entries';
 
   async getAll(): Promise<Blog[]> {
     try {
